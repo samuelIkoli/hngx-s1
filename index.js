@@ -21,9 +21,9 @@ app.get('/api', (req, res) => {
             'default', { weekday: 'long' }
         ),
         "utc_time": date.toISOString().split('.')[0] + "Z",
+        track: track.toLowerCase(),
         "github_file_url": "https://github.com/samuelIkoli/hngx-s1/blob/main/index.js",
         "github_repo_url": "https://github.com/samuelIkoli/hngx-s1",
-        track: track.toLowerCase(),
         "status_code": 200
     })
 })
