@@ -23,7 +23,7 @@ app.get('/api', (req, res) => {
         "utc_time": date,
         "github_file_url": "https://github.com/samuelIkoli/hngx-s1/blob/main/index.js",
         "github_repo_url": "https://github.com/samuelIkoli/hngx-s1",
-        track,
+        track: track.toLowerCase(),
         "status_code": 200
     })
 })
