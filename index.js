@@ -20,7 +20,7 @@ app.get('/api', (req, res) => {
         "current_day": date.toLocaleString(
             'default', { weekday: 'long' }
         ),
-        "utc_time": date,
+        "utc_time": date.toISOString().split('.')[0] + "Z",
         "github_file_url": "https://github.com/samuelIkoli/hngx-s1/blob/main/index.js",
         "github_repo_url": "https://github.com/samuelIkoli/hngx-s1",
         track: track.toLowerCase(),
