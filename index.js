@@ -8,6 +8,10 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
+    return res.status(200).send('HNG X task 1, check /api for the task')
+})
+
+app.get('/api', (req, res) => {
     const { slack_name = 'Not provided, Check spelling maybe',
         track = 'Not provided, Check spelling maybe' } = req.query;
     const date = new Date();
