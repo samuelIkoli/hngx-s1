@@ -5,14 +5,22 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     const { slack_name = 'Not provided, Check spelling maybe',
-        track = 'Not provided, Check spelling maybe' } = req.query
+        track = 'Not provided, Check spelling maybe' } = req.query;
+    const date = new Date();
     return res.status(200).json({
         slack_name,
-        track
+        "current_day": date.toLocaleString(
+            'default', { weekday: 'long' }
+        ),
+        "utc_time": date,
+        "github_file_url": "https://github.com/samuelIkoli/hngx-s1/blob/main/index.js",
+        "github_repo_url": "https://github.com/samuelIkoli/hngx-s1",
+        track,
+        "status_code": 200
     })
 })
 
